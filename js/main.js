@@ -88,61 +88,78 @@
     });
   }
 
-  /* ---------- chat replay (typing animation) ---------- */
-  var chatBody = document.querySelector('.chat-body');
-  if (chatBody && !reducedMotion) {
-    doc.classList.add('play-chat');
+  /* ---------- live chat (talks to /api/chat on the server) ---------- */
+  var chatBody = document.getElementById('chatBody');
+  var chatForm = document.getElementById('chatForm');
+  var chatText = document.getElementById('chatText');
+  if (chatBody && chatForm && chatText) {
+    var history = [];   // only real user/assistant turns; greeting + errors excluded
+    var pending = false;
 
-    var topSeq = [].slice.call(chatBody.children).filter(function (el) {
-      return el.classList.contains('seq');
-    });
+    var ERR_GENERAL = 'Khalad ayaa dhacay — fadlan isku day mar kale. Something went wrong — please try again.';
+    var ERR_RATE = 'Fariimo badan — fadlan sug daqiiqad. Too many messages — please wait a minute.';
 
-    function showEl(el) { el.classList.add('show'); }
+    function scrollChat() { chatBody.scrollTop = chatBody.scrollHeight; }
 
-    function typeInto(msg, done) {
-      var span = msg.querySelector('.typed');
-      var full = msg.getAttribute('data-type') || (span ? span.textContent : '');
-      if (!span) { done(); return; }
-      span.textContent = '';
-      msg.classList.add('typing-now');
-      var i = 0;
-      (function tick() {
-        if (i <= full.length) {
-          span.textContent = full.slice(0, i);
-          i++;
-          setTimeout(tick, 22);
-        } else {
-          msg.classList.remove('typing-now');
-          done();
-        }
-      })();
+    function bubble(role, text) {
+      var d = document.createElement('div');
+      d.className = 'msg ' + (role === 'user' ? 'u' : 'a');
+      d.textContent = text;
+      chatBody.appendChild(d);
+      scrollChat();
+      return d;
     }
 
-    function playFrom(idx) {
-      if (idx >= topSeq.length) return;
-      var el = topSeq[idx];
-      showEl(el);
+    function typingBubble() {
+      var d = document.createElement('div');
+      d.className = 'msg a typing';
+      d.setAttribute('aria-hidden', 'true');
+      d.innerHTML = '<span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>';
+      chatBody.appendChild(d);
+      scrollChat();
+      return d;
+    }
 
-      if (el.hasAttribute('data-type')) {
-        typeInto(el, function () { setTimeout(function () { playFrom(idx + 1); }, 350); });
-        return;
-      }
+    chatForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (pending) return;
+      var text = chatText.value.trim();
+      if (!text) return;
+      chatText.value = '';
+      bubble('user', text);
+      history.push({ role: 'user', content: text });
+      if (history.length > 12) history = history.slice(-12);
 
-      var lis = [].slice.call(el.querySelectorAll('li.seq'));
-      if (lis.length) {
-        lis.forEach(function (li, k) {
-          setTimeout(function () {
-            showEl(li);
-            if (k === lis.length - 1) setTimeout(function () { playFrom(idx + 1); }, 420);
-          }, 300 + k * 280);
+      pending = true;
+      chatForm.classList.add('busy');
+      var t = typingBubble();
+
+      fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: history })
+      })
+        .then(function (r) {
+          if (r.status === 429) throw new Error('rate');
+          if (!r.ok) throw new Error('bad');
+          return r.json();
+        })
+        .then(function (d) {
+          var reply = (d && d.reply) ? String(d.reply) : '';
+          if (!reply) throw new Error('empty');
+          t.remove();
+          bubble('assistant', reply);
+          history.push({ role: 'assistant', content: reply });
+        })
+        .catch(function (err) {
+          t.remove();
+          bubble('assistant', err && err.message === 'rate' ? ERR_RATE : ERR_GENERAL);
+        })
+        .then(function () {
+          pending = false;
+          chatForm.classList.remove('busy');
         });
-        return;
-      }
-
-      setTimeout(function () { playFrom(idx + 1); }, 700);
-    }
-
-    setTimeout(function () { playFrom(0); }, 700);
+    });
   }
 
   /* ---------- particle network in hero ---------- */

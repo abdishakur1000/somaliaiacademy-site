@@ -1,0 +1,15 @@
+[Unit]
+Description=Somali AI Academy chat backend
+After=network.target
+
+[Service]
+EnvironmentFile=/etc/somaliai-chat.env
+ExecStart=/usr/bin/python3 /opt/somaliai-chat/chat_server.py
+Restart=always
+RestartSec=3
+User=www-data
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

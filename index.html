@@ -56,33 +56,23 @@
       </div>
     </div>
 
-    <!-- mock AI chat window -->
-    <div class="chat glass tilt reveal">
-      <div class="glare" aria-hidden="true"></div>
+    <!-- live AI chat -->
+    <div class="chat glass reveal">
       <div class="chat-bar">
         <span class="chat-dots" aria-hidden="true"><i></i><i></i><i></i></span>
         <span class="chat-title">
           <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256,86 L298,210 L430,212 L324,290 L362,418 L256,340 L150,418 L188,290 L82,212 L214,210 Z" fill="none" stroke="#22D3EE" stroke-width="34" stroke-linejoin="round"/></svg>
           Somali AI Academy
         </span>
+        <span class="chat-live" aria-hidden="true"></span>
       </div>
-      <div class="chat-body">
-        <div class="msg u seq">Sida aad u isticmaasho oo u dejiso AI-ga?</div>
-        <div class="msg a seq" data-type="Practical AI, taught for Somali speakers."><span class="typed">Practical AI, taught for Somali speakers.</span></div>
-        <div class="msg a seq">
-          <ul>
-            <li class="seq">10 ready-to-use prompts (Somali-English)</li>
-            <li class="seq">ChatGPT quick-start guide</li>
-            <li class="seq">5 AI tools to try</li>
-            <li class="seq">Make-money-with-AI ideas</li>
-          </ul>
-        </div>
-        <a class="chat-cta seq" href="#free">Get the Free AI Starter Pack →</a>
+      <div class="chat-body" id="chatBody" aria-live="polite">
+        <div class="msg a">Salaan! 👋 Waxaan ahay kaaliyaha Somali AI Academy. Wax kasta oo ku saabsan AI i weydii — Af-Soomaali ama English. Ask me anything about learning AI.</div>
       </div>
-      <div class="chat-input" aria-hidden="true">
-        <span class="chat-ph">Learn AI in Somali-English<i class="caret"></i></span>
-        <span class="chat-send"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 11.5 21 3l-8.5 18-2.3-7.2L3 11.5z" fill="currentColor"/></svg></span>
-      </div>
+      <form class="chat-input" id="chatForm" autocomplete="off">
+        <input id="chatText" type="text" maxlength="1000" placeholder="Qor su'aashaada… / Type your question…" aria-label="Type your question">
+        <button class="chat-send" type="submit" aria-label="Send"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 11.5 21 3l-8.5 18-2.3-7.2L3 11.5z" fill="currentColor"/></svg></button>
+      </form>
     </div>
   </div>
 
