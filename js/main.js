@@ -162,6 +162,35 @@
     });
   }
 
+  /* ---------- YouTube panel: lazy, autoplay muted, loops channel uploads ---------- */
+  var vslot = document.querySelector('.video-slot');
+  if (vslot) {
+    var vInjected = false;
+    var injectVideo = function () {
+      if (vInjected) return;
+      vInjected = true;
+      var list = vslot.getAttribute('data-list');
+      var start = Math.floor(Math.random() * 6); // random start; YouTube falls back to the first video if out of range
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/videoseries?list=' + encodeURIComponent(list) +
+        '&index=' + start + '&loop=1&playsinline=1&rel=0&controls=1' +
+        (reducedMotion ? '' : '&autoplay=1&mute=1');
+      f.title = 'Somali AI Academy — YouTube';
+      f.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
+      f.setAttribute('allowfullscreen', '');
+      f.loading = 'lazy';
+      var frame = vslot.querySelector('.video-frame');
+      if (frame) frame.appendChild(f);
+    };
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries, obs) {
+        if (entries[0].isIntersecting) { injectVideo(); obs.disconnect(); }
+      }, { rootMargin: '600px 0px' }).observe(vslot);
+    } else {
+      injectVideo();
+    }
+  }
+
   /* ---------- particle network in hero ---------- */
   var header = document.querySelector('header');
   var canvas = document.getElementById('net');

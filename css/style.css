@@ -364,6 +364,34 @@ header p.lead{font-size:clamp(16px,2vw,18.5px);color:var(--muted2);max-width:560
   box-shadow:inset 0 1px 0 rgba(255,255,255,.55), 0 0 26px rgba(34,211,238,.7), 0 8px 22px rgba(2,8,20,.6);
 }
 
+/* ---------- YouTube panel (slot beside Level 01) ---------- */
+.video-slot{
+  position:absolute;top:20px;right:0;width:calc(50% - 64px);z-index:2;
+  display:flex;flex-direction:column;gap:16px;
+  padding:22px;border-radius:var(--radius);
+  background:linear-gradient(155deg, rgba(255,255,255,.08), rgba(255,255,255,.02) 55%);
+  border:1px solid var(--line);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.16), 0 26px 60px rgba(2,8,20,.55);
+}
+.video-head{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--font-display);font-weight:700;color:#fff;font-size:15px;
+}
+.yt-ico{width:26px;height:26px;filter:drop-shadow(0 0 10px rgba(255,0,0,.45))}
+.video-frame{
+  position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;
+  background:#000;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 14px 34px rgba(2,8,20,.5);
+}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-frame noscript a{color:var(--cyan);display:block;padding:20px;text-align:center}
+.video-slot .btn{width:100%;text-align:center}
+@media(max-width:880px){
+  .video-slot{position:static;width:auto;margin:0 0 56px 62px}
+}
+
 .milestone{position:relative;text-align:center;margin:6px 0 62px;z-index:2}
 .milestone-chip{
   display:inline-block;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;
@@ -651,6 +679,7 @@ html.js .reveal.in{opacity:1;transform:none}
   .lv-left .lv-node,.lv-right .lv-node{left:-52px}
   .path-line{left:23px}
   .milestone{margin-left:52px}
+  .video-slot{margin-left:52px;padding:16px}
   .price{font-size:46px}
   .why-quote{padding-left:20px}
   .tile{font-size:12.5px;padding:20px 10px}
