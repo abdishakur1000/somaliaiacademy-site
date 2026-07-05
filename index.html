@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Somali AI Academy — Learn AI in Somali-English</title>
+<meta name="description" content="AI-ga oo Af-Soomaali lagu baray. Learn how to use and set up AI, make money with AI tools, and grow your business — taught for Somali speakers.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M256,86 L298,210 L430,212 L324,290 L362,418 L256,340 L150,418 L188,290 L82,212 L214,210 Z' fill='none' stroke='%2322D3EE' stroke-width='28' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- shared svg defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2D9CFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs>
+</svg>
+
+<div class="progress" aria-hidden="true"></div>
+
+<div class="aurora" aria-hidden="true">
+  <div class="blob blob-a"></div>
+  <div class="blob blob-b"></div>
+  <div class="blob blob-c"></div>
+</div>
+
+<nav>
+  <a class="brand" href="#top">
+    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256,96 L298,210 L430,212 L324,290 L362,418 L256,340 L150,418 L188,290 L82,212 L214,210 Z" fill="none" stroke="#22D3EE" stroke-width="20" stroke-linejoin="round"/><circle cx="256" cy="256" r="18" fill="#fff"/></svg>
+    Somali AI Academy
+  </a>
+  <div class="navlinks">
+    <a href="#free">Free Pack</a>
+    <a href="#toolkit">Toolkit</a>
+    <a href="#class">Class</a>
+    <a href="#services">Services</a>
+  </div>
+  <a class="btn btn-primary btn-sm" href="#free">Start Free</a>
+</nav>
+
+<!-- ================= HERO : headline + live AI chat ================= -->
+<header id="top">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="floor" aria-hidden="true"></div>
+
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="pill reveal">AI-ga oo Af-Soomaali lagu baray</div>
+      <h1 class="reveal">Learn AI in <span class="grad-text">Somali-English</span> and put it to work</h1>
+      <p class="lead reveal">Sida aad u isticmaasho oo u dejiso AI-ga — si aad lacag ugu sameyso, waqti ugu badbaadiso, oo ganacsigaaga u kobciso. Practical AI, taught for Somali speakers.</p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary btn-lg" href="#free">Get the Free AI Starter Pack</a>
+        <a class="btn btn-ghost btn-lg" href="https://youtube.com/@SomaliAIAcademy" target="_blank" rel="noopener">Watch on YouTube</a>
+      </div>
+    </div>
+
+    <!-- mock AI chat window -->
+    <div class="chat glass tilt reveal">
+      <div class="glare" aria-hidden="true"></div>
+      <div class="chat-bar">
+        <span class="chat-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="chat-title">
+          <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256,86 L298,210 L430,212 L324,290 L362,418 L256,340 L150,418 L188,290 L82,212 L214,210 Z" fill="none" stroke="#22D3EE" stroke-width="34" stroke-linejoin="round"/></svg>
+          Somali AI Academy
+        </span>
+      </div>
+      <div class="chat-body">
+        <div class="msg u seq">Sida aad u isticmaasho oo u dejiso AI-ga?</div>
+        <div class="msg a seq" data-type="Practical AI, taught for Somali speakers."><span class="typed">Practical AI, taught for Somali speakers.</span></div>
+        <div class="msg a seq">
+          <ul>
+            <li class="seq">10 ready-to-use prompts (Somali-English)</li>
+            <li class="seq">ChatGPT quick-start guide</li>
+            <li class="seq">5 AI tools to try</li>
+            <li class="seq">Make-money-with-AI ideas</li>
+          </ul>
+        </div>
+        <a class="chat-cta seq" href="#free">Get the Free AI Starter Pack →</a>
+      </div>
+      <div class="chat-input" aria-hidden="true">
+        <span class="chat-ph">Learn AI in Somali-English<i class="caret"></i></span>
+        <span class="chat-send"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 11.5 21 3l-8.5 18-2.3-7.2L3 11.5z" fill="currentColor"/></svg></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true"><span></span></div>
+</header>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>AI-ga oo Af-Soomaali lagu baray</span><i>✦</i>
+    <span>Learn AI in Somali-English</span><i>✦</i>
+    <span>AI-ga oo Af-Soomaali lagu baray</span><i>✦</i>
+    <span>Learn AI in Somali-English</span><i>✦</i>
+    <span>AI-ga oo Af-Soomaali lagu baray</span><i>✦</i>
+    <span>Learn AI in Somali-English</span><i>✦</i>
+    <span>AI-ga oo Af-Soomaali lagu baray</span><i>✦</i>
+    <span>Learn AI in Somali-English</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ================= ACADEMY WING : the learning path ================= -->
+<section id="free" class="wing">
+  <div class="sec-ghost" aria-hidden="true">ACADEMY</div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">The Academy</div>
+      <h2>Start free</h2>
+      <p class="sub">Bilow bilaash. Hel buug-yare AI ah oo Af-Soomaali ah: prompts diyaar ah, hage ChatGPT, iyo siyaabo lacag loogu sameeyo.</p>
+    </div>
+
+    <div class="path">
+      <div class="path-line" aria-hidden="true"><span class="path-fill"></span></div>
+
+      <!-- LEVEL 01 -->
+      <article class="level lv-left glass tilt reveal">
+        <div class="glare" aria-hidden="true"></div>
+        <div class="lv-node" aria-hidden="true">01</div>
+        <span class="tag tag-free">FREE</span>
+        <h3>AI Starter Pack</h3>
+        <div class="price"><span class="grad-text">$0</span></div>
+        <p>The fastest way to begin. Email-kaaga geli, kuna hel isla markiiba.</p>
+        <ul>
+          <li>10 ready-to-use prompts (Somali-English)</li>
+          <li>ChatGPT quick-start guide</li>
+          <li>5 AI tools to try</li>
+          <li>Make-money-with-AI ideas</li>
+        </ul>
+        <a class="btn btn-primary" href="https://somaliaiacademy.gumroad.com/l/rdfsbe" target="_blank" rel="noopener">Get it free →</a>
+      </article>
+
+      <!-- milestone : Go further -->
+      <div class="milestone reveal">
+        <span class="milestone-chip">Go further</span>
+        <p class="milestone-sub">Markaad diyaar tahay inaad sii horumarto — qalab iyo casharro dhammaystiran.</p>
+      </div>
+
+      <!-- LEVEL 02 -->
+      <article id="toolkit" class="level lv-right glow-border tilt reveal">
+        <div class="lv-node" aria-hidden="true">02</div>
+        <div class="inner">
+          <div class="glare" aria-hidden="true"></div>
+          <span class="ribbon">MOST POPULAR</span>
+          <h3>AI Toolkit for Somali Entrepreneurs</h3>
+          <div class="price"><span class="grad-text">$19</span> <small>one-time</small></div>
+          <p>Everything in the free pack, plus the full library to actually run your work and business with AI.</p>
+          <ul>
+            <li>30+ prompts for business, content &amp; money</li>
+            <li>Step-by-step setup guides</li>
+            <li>Templates you can copy</li>
+            <li>Lifetime updates</li>
+          </ul>
+          <a class="btn btn-primary" href="https://somaliaiacademy.gumroad.com/l/zwfuxv" target="_blank" rel="noopener">Get the Toolkit — $19</a>
+        </div>
+      </article>
+
+      <!-- LEVEL 03 -->
+      <article id="class" class="level lv-left glass tilt reveal">
+        <div class="glare" aria-hidden="true"></div>
+        <div class="lv-node" aria-hidden="true">03</div>
+        <span class="tag tag-pro">CLASS</span>
+        <h3>AI Masterclass — Af Soomaali</h3>
+        <div class="price"><span class="grad-text">$49</span> <small>full course</small></div>
+        <p>A complete video course (in Somali) that takes you from zero to confidently using AI for real income.</p>
+        <ul>
+          <li>Video lessons, step by step</li>
+          <li>ChatGPT, images, voice &amp; automation</li>
+          <li>Real money-making projects</li>
+          <li>Certificate of completion</li>
+        </ul>
+        <a class="btn btn-glass" href="https://youtube.com/@SomaliAIAcademy" target="_blank" rel="noopener">Coming soon — subscribe</a>
+      </article>
+    </div>
+
+    <!-- community banner -->
+    <div class="community glass reveal">
+      <div class="orbit" aria-hidden="true">
+        <div class="orbit-ring"></div>
+        <div class="orbit-ring o2"></div>
+        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256,86 L298,210 L430,212 L324,290 L362,418 L256,340 L150,418 L188,290 L82,212 L214,210 Z" fill="none" stroke="url(#sg)" stroke-width="16" stroke-linejoin="round"/><circle cx="256" cy="256" r="16" fill="#22D3EE"/></svg>
+      </div>
+      <p>Ku biir kumannaan Soomaali ah oo baranaya AI-ga. Join the community learning AI in their own language.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EVC PLUS ================= -->
+<section id="evc" class="wing">
+  <div class="sec-ghost" aria-hidden="true">EVC+</div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Somali Mobile Money</div>
+      <h2>Ku bixi EVC Plus</h2>
+      <p class="sub">Pay with EVC Plus / Somali mobile money — adeegso lambarkaaga Soomaali.</p>
+    </div>
+
+    <div class="evc-grid">
+      <div class="pay-wrap reveal">
+        <div class="pay-card tilt">
+          <div class="pc-shine" aria-hidden="true"></div>
+          <div class="pc-top">
+            <div class="pc-chip" aria-hidden="true"></div>
+            <div class="pc-brand">EVC Plus</div>
+          </div>
+          <div class="pc-num">0617307059</div>
+          <div class="pc-bottom">
+            <div>
+              <div class="pc-label">Magaca / Name</div>
+              <div class="pc-name">Abdishakur Mohamed</div>
+            </div>
+            <svg class="pc-star" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256,86 L298,210 L430,212 L324,290 L362,418 L256,340 L150,418 L188,290 L82,212 L214,210 Z" fill="none" stroke="#22D3EE" stroke-width="22" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="pay-shadow" aria-hidden="true"></div>
+      </div>
+
+      <div class="steps-panel glass reveal">
+        <span class="tag tag-pop">SOMALI MOBILE MONEY</span>
+        <h3>Sida loo bixiyo / How to pay</h3>
+        <ol class="steps">
+          <li>U dir lacagta EVC Plus: <b>0617307059</b> &nbsp;(Magaca / Name: <b>Abdishakur Mohamed</b>)</li>
+          <li>Qiimaha: Toolkit <b>$19</b> · Masterclass <b>$49</b>.</li>
+          <li>Markaad bixiso, email-ka noogu soo dir caddaynta (screenshot) iyo alaabta aad rabto: <b>info@somaliaiacademy.com</b></li>
+          <li>Waxaan kuu soo diraynaa alaabtaada isla markiiba (email).</li>
+        </ol>
+        <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@somaliaiacademy.com&amp;su=EVC+payment+proof" target="_blank" rel="noopener">Email payment proof</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUSINESS WING ================= -->
+<section id="services" class="wing wing-biz">
+  <div class="sec-ghost" aria-hidden="true">BUSINESS</div>
+  <div class="wrap">
+    <div class="svc glass reveal">
+      <div class="svc-glow" aria-hidden="true"></div>
+      <div class="eyebrow">Done for you</div>
+      <h2>AI setup for your business</h2>
+      <p class="svc-lead">Ma haysataa waqti? Anaga ayaa kuu dejin doona AI-ga ganacsigaaga — customers, marketing, iyo maamul. Done for you.</p>
+      <div class="tiles">
+        <div class="tile"><span class="tile-ico">⚙️</span>AI customer replies</div>
+        <div class="tile"><span class="tile-ico">📣</span>Content &amp; marketing</div>
+        <div class="tile"><span class="tile-ico">🗂️</span>Admin automation</div>
+        <div class="tile"><span class="tile-ico">🎓</span>Team training</div>
+      </div>
+      <a class="btn btn-primary btn-lg" href="mailto:info@somaliaiacademy.com?subject=AI%20setup%20for%20my%20business">Book a free intro call</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY : statement ================= -->
+<section id="why" class="wing">
+  <div class="sec-ghost" aria-hidden="true">WHY</div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Why Somali AI Academy</div>
+      <h2>Why Somali AI Academy</h2>
+    </div>
+    <div class="why-grid">
+      <blockquote class="why-quote reveal">
+        The world is changing with AI, but there's almost nothing teaching it in Somali. We're here to fix that — clear, practical, and <span class="grad-text">in your language.</span>
+      </blockquote>
+      <div class="why-side reveal">
+        <div class="why-pane glass">
+          <p>AI-gu wuxuu beddelayaa adduunka — laakiin macluumaadku ku yar yahay Af-Soomaali. Waxaan halkan u nahay inaan AI-ga ku sharaxno luqaddaada, si fudud oo wax ku ool ah.</p>
+        </div>
+        <a class="btn btn-glass btn-lg" href="https://youtube.com/@SomaliAIAcademy" target="_blank" rel="noopener">Subscribe on YouTube</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <svg class="f-star" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256,86 L298,210 L430,212 L324,290 L362,418 L256,340 L150,418 L188,290 L82,212 L214,210 Z" fill="none" stroke="#22D3EE" stroke-width="20" stroke-linejoin="round"/><circle cx="256" cy="256" r="16" fill="#fff"/></svg>
+  <div class="fbrand">Somali AI Academy</div>
+  <div class="ftag">AI-ga oo Af-Soomaali lagu baray · Learn AI in Somali-English</div>
+  <div class="flinks">
+    <a href="https://youtube.com/@SomaliAIAcademy" target="_blank" rel="noopener">YouTube</a> ·
+    <a href="mailto:info@somaliaiacademy.com">Contact</a>
+  </div>
+  <div class="fcopy">© 2026 Somali AI Academy · somaliaiacademy.com</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
