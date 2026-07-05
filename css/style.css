@@ -367,8 +367,8 @@ header p.lead{font-size:clamp(16px,2vw,18.5px);color:var(--muted2);max-width:560
 /* ---------- YouTube panel (slot beside Level 01) ---------- */
 .video-slot{
   position:absolute;top:20px;right:0;width:calc(50% - 64px);z-index:2;
-  display:flex;flex-direction:column;gap:16px;
-  padding:22px;border-radius:var(--radius);
+  display:flex;flex-direction:column;justify-content:space-between;gap:16px;
+  padding:20px;border-radius:var(--radius);
   background:linear-gradient(155deg, rgba(255,255,255,.08), rgba(255,255,255,.02) 55%);
   border:1px solid var(--line);
   backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
@@ -381,7 +381,7 @@ header p.lead{font-size:clamp(16px,2vw,18.5px);color:var(--muted2);max-width:560
 .yt-ico{width:26px;height:26px;filter:drop-shadow(0 0 10px rgba(255,0,0,.45))}
 .video-frame{
   position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;
-  background:#000;
+  background:#000 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9.8 15.1V8.6l6.2 3.3z' fill='%23233a5c'/%3E%3C/svg%3E") center/56px no-repeat;
   border:1px solid rgba(255,255,255,.12);
   box-shadow:0 14px 34px rgba(2,8,20,.5);
 }

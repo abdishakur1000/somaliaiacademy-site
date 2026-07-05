@@ -165,15 +165,30 @@
   /* ---------- YouTube panel: lazy, autoplay muted, loops channel uploads ---------- */
   var vslot = document.querySelector('.video-slot');
   if (vslot) {
+    // keep the panel exactly as tall as the Level 01 card on desktop
+    var syncVideoPanel = function () {
+      var l1 = document.querySelector('.level.lv-left');
+      if (!l1) return;
+      vslot.style.height = window.innerWidth > 880 ? l1.offsetHeight + 'px' : '';
+    };
+    window.addEventListener('resize', syncVideoPanel);
+    window.addEventListener('load', syncVideoPanel);
+    syncVideoPanel();
+
     var vInjected = false;
     var injectVideo = function () {
       if (vInjected) return;
       vInjected = true;
       var list = vslot.getAttribute('data-list');
-      var start = Math.floor(Math.random() * 6); // random start; YouTube falls back to the first video if out of range
+      // start from a real video id so the thumbnail shows instantly (no black box),
+      // then the uploads playlist chains every video, looping forever
+      var ids = (vslot.getAttribute('data-videos') || '').split(',').filter(Boolean);
+      var id = ids.length ? ids[Math.floor(Math.random() * ids.length)] : '';
+      var base = id
+        ? 'https://www.youtube-nocookie.com/embed/' + id + '?list=' + encodeURIComponent(list)
+        : 'https://www.youtube-nocookie.com/embed/videoseries?list=' + encodeURIComponent(list);
       var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/videoseries?list=' + encodeURIComponent(list) +
-        '&index=' + start + '&loop=1&playsinline=1&rel=0&controls=1' +
+      f.src = base + '&loop=1&playsinline=1&rel=0&controls=1' +
         (reducedMotion ? '' : '&autoplay=1&mute=1');
       f.title = 'Somali AI Academy — YouTube';
       f.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
